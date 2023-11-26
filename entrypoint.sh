@@ -25,9 +25,6 @@ EXIT_CODE="$?"
 
 echo "$OUTPUT"
 
-# Filter output to reduce 'preview' PR comment length
-FILTERED_OUTPUT="$(echo "$OUTPUT" | /filter-preview-output.sh)"
-
 # Set output
 # https://github.com/orgs/community/discussions/26288#discussioncomment-3876281
 DELIMITER="DNSCONTROL-$RANDOM"
@@ -38,7 +35,7 @@ DELIMITER="DNSCONTROL-$RANDOM"
   echo "$DELIMITER"
 
   echo "preview_comment<<$DELIMITER"
-  echo "$FILTERED_OUTPUT"
+  echo "$OUTPUT"
   echo "$DELIMITER"
 } >> "$GITHUB_OUTPUT"
 

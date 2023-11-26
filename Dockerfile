@@ -9,5 +9,5 @@ RUN apk add --no-cache bash
 
 RUN ["dnscontrol", "version"]
 
-COPY README.md entrypoint.sh bin/filter-preview-output.sh /
+COPY README.md entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
