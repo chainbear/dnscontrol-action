@@ -20,7 +20,8 @@ if [ "$1" != "check" ]; then
 fi
 
 IFS=
-OUTPUT="$(dnscontrol "${ARGS[@]}")"
+COMMAND="dnscontrol "${ARGS[@]}""
+OUTPUT="$($COMMAND)"
 EXIT_CODE="$?"
 
 echo "$OUTPUT"
@@ -40,7 +41,7 @@ DELIMITER="DNSCONTROL-$RANDOM"
 } >> "${GITHUB_OUTPUT:-/dev/null}"
 
 {
-  echo "# DNSControl Output"
+  echo "# Output of "'`'"$COMMAND"'`'""
   echo '```'
   echo "$OUTPUT"
   echo '```'
