@@ -21,7 +21,7 @@ fi
 
 IFS=
 COMMAND="dnscontrol ${ARGS[@]}"
-OUTPUT="$($COMMAND)"
+OUTPUT="$(dnscontrol "${ARGS[@]}")"
 EXIT_CODE="$?"
 
 echo "$OUTPUT"
