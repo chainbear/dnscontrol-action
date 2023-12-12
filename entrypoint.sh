@@ -20,7 +20,7 @@ if [ "$1" != "check" ]; then
 fi
 
 IFS=
-COMMAND="dnscontrol ${ARGS[@]}"
+COMMAND="dnscontrol $@"
 OUTPUT="$(dnscontrol "${ARGS[@]}")"
 EXIT_CODE="$?"
 
