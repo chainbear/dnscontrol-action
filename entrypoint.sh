@@ -37,6 +37,13 @@ DELIMITER="DNSCONTROL-$RANDOM"
   echo "preview_comment<<$DELIMITER"
   echo "$OUTPUT"
   echo "$DELIMITER"
-} >> "$GITHUB_OUTPUT"
+} >> "${GITHUB_OUTPUT:-/dev/null}"
+
+{
+  echo "# DNSControl Output"
+  echo "```"
+  echo $OUTPUT
+  echo "```"
+} >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
 exit $EXIT_CODE
