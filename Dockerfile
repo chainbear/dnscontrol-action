@@ -1,4 +1,4 @@
-FROM ghcr.io/stackexchange/dnscontrol:4.26.0
+FROM ghcr.io/stackexchange/dnscontrol:4.27.1
 
 LABEL "com.github.actions.name"="DNSControl"
 LABEL "com.github.actions.description"="Deploy your DNS configuration to multiple providers."
